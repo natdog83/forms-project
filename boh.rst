@@ -2,7 +2,7 @@
 Bag of Hope
 ***********
 
-The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.
+The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.  After the workflow and email is sent to the chapter with details. 
 
 The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
 The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
@@ -165,3 +165,8 @@ An additional interest record is created and added to the parents contact record
 +===========================+===========================+=============================+
 |                           |                           |                             |
 +---------------------------+---------------------------+-----------------------------+
+
+Email Content
+#############
+
+GS - needs to be added. 
