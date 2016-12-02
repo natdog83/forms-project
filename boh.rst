@@ -2,10 +2,10 @@
 Bag of Hope
 ***********
 
-When your child receives a diagnosis of type 1 diabetes (T1D), it can be an overwhelming time. As you navigate this challenging period of adjustment to life with T1D, you can find helpful information and support through the JDRF Bag of Hope®. The JDRF Bag of Hope is filled with useful resources for both the child who has been diagnosed with T1D and his or her caregivers. Along with educational materials, we’ve included a special friend — Rufus, the Bear with Diabetes® — to show your child he or she is not alone while learning to take shots and test blood sugar.
-Resources in your JDRF Bag of Hope.
+The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.
 
-The BOH form was creatd in Gravity Forms and sends the data to the Salesforce Lead object.
+The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
+The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
 
 Form Fields
 ######
@@ -117,40 +117,51 @@ Child Contact Record
 
 The child contact record is created and linked as a member of the parent household.
 
-+---------------------------+---------------------------+
-| Lead Object               | Contact Object            |
-+===========================+===========================+
-| Lead Source               | Lead Source               |
-+---------------------------+---------------------------+
-| Child Title               | Salutation                |
-+---------------------------+---------------------------+
-| Child First Name          | Name - First Name         |
-+---------------------------+---------------------------+
-| Child Last Name           | Name - Last Name          |
-+---------------------------+---------------------------+
-| Child Suffix              | Suffix                    |
-+---------------------------+---------------------------+
-| Address - Street          | Address - Street          |
-+---------------------------+---------------------------+
-| Address - Street2         | Address - Street2         |
-+---------------------------+---------------------------+
-| Address - City            | Address - City            |
-+---------------------------+---------------------------+
-| Address - State/Province  | Address - State/Province  |
-+---------------------------+---------------------------+
-| Address - Zip/Postal Code | Address - Zip/Postal Code |
-+---------------------------+---------------------------+
-| Child Date of Birth       | Birthdate                 |
-+---------------------------+---------------------------+
-| Child Date of Diagnosis   | Diagnosis Date            |
-+---------------------------+---------------------------+
-| Child Gender              | Gender                    |
-+---------------------------+---------------------------+
-| Diagnosis Detail          | Hospital                  |
-+---------------------------+---------------------------+
-| Endocrinologist           | Endocrinologist           |
-+---------------------------+---------------------------+
-| Child's Hobbies           | Hobbies                   |
-+---------------------------+---------------------------+
-| School                    | School                    |
-+---------------------------+---------------------------+
++---------------------------+---------------------------+-----------------------------+
+| Lead Object               | Contact Object            | Auto fill                   |
++===========================+===========================+=============================+
+| Lead Source               | Lead Source               |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child Title               | Salutation                |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child First Name          | Name - First Name         |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child Last Name           | Name - Last Name          |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child Suffix              | Suffix                    |                             |
++---------------------------+---------------------------+-----------------------------+
+| Address - Street          | Address - Street          |                             |
++---------------------------+---------------------------+-----------------------------+
+| Address - Street2         | Address - Street2         |                             |
++---------------------------+---------------------------+-----------------------------+
+| Address - City            | Address - City            |                             |
++---------------------------+---------------------------+-----------------------------+
+| Address - State/Province  | Address - State/Province  |                             |
++---------------------------+---------------------------+-----------------------------+
+| Address - Zip/Postal Code | Address - Zip/Postal Code |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child Date of Birth       | Birthdate                 |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child Date of Diagnosis   | Diagnosis Date            |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child Gender              | Gender                    |                             |
++---------------------------+---------------------------+-----------------------------+
+| Diagnosis Detail          | Hospital                  |                             |
++---------------------------+---------------------------+-----------------------------+
+| Endocrinologist           | Endocrinologist           |                             |
++---------------------------+---------------------------+-----------------------------+
+| Child's Hobbies           | Hobbies                   |                             |
++---------------------------+---------------------------+-----------------------------+
+| School                    | School                    |                             |
++---------------------------+---------------------------+-----------------------------+
+
+Additional Interest Record
+**************************
+
+An additional interest record is created and added to the parents contact record. 
+
++---------------------------+---------------------------+-----------------------------+
+| Lead Object               | Contact Object            | Auto fill                   |
++===========================+===========================+=============================+
+|                           |                           |                             |
++---------------------------+---------------------------+-----------------------------+
