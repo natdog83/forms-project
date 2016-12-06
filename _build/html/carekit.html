@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Care Kit &mdash; JDRF Forms Project 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="JDRF Forms Project 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="ODST" href="odst.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> JDRF Forms Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="boh.html">Bag of Hope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odst.html">ODST</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Care Kit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t1d-care-kit-form-fields">T1D Care Kit Form Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lead-object">Lead Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t1d-care-kit-layout-in-the-leads-object">T1D Care Kit Layout in the Leads Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#map-fields-from-leads-object-to-outreach-request-object">Map fields from Leads object to Outreach Request object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t1d-care-kit-layout-in-the-outreach-request-object">T1D Care Kit Layout in the Outreach Request Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#email-content">Email Content</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">JDRF Forms Project</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Care Kit</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/carekit.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="care-kit">
+<h1>Care Kit<a class="headerlink" href="#care-kit" title="Permalink to this headline">¶</a></h1>
+<p>The Care Kit form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates
+a lead and through a workflow the lead is convereted into a contact and an outreach reaquest and marks the
+status as fulfilled.  An email is sent to the chapter to the chapter once the Outreach Request is created
+with details to follow up.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The link to the production environment is: <a class="reference external" href="http://type1nation.staging.wpengine.com/request-care-kit/">http://type1nation.staging.wpengine.com/request-care-kit/</a></li>
+<li>The link to the staging environment is: <a class="reference external" href="http://type1nation.staging.wpengine.com/request-care-kit/">http://type1nation.staging.wpengine.com/request-care-kit/</a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="triggers">
+<h2>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Trigger run when a lead is created with T1D Care Kit lead source and does the following (details below):</dt>
+<dd><ul class="first last simple">
+<li>Lead records are AUTOMATICALLY converted to Contact records immediately</li>
+<li>Delete Lead record upon conversion to Contact record</li>
+<li>Update Outreach Request record from Lead record lookup to Contact record lookup upon conversion to Contact record</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="t1d-care-kit-form-fields">
+<h2>T1D Care Kit Form Fields<a class="headerlink" href="#t1d-care-kit-form-fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="25%" />
+<col width="22%" />
+<col width="9%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Type/Options</th>
+<th class="head">Destination</th>
+<th class="head">Required</th>
+<th class="head">Validation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Please confirm this request is
+for a newly diagnosed child...</td>
+<td><dl class="first last docutils">
+<dt>Checklist</dt>
+<dd><ul class="first last simple">
+<li>16 years or older</li>
+<li>United States resident</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>N/A</dt>
+<dd>Javacript for form</dd>
+</dl>
+</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Lead Source</td>
+<td><dl class="first last docutils">
+<dt>Hidden Field</dt>
+<dd><ul class="first last simple">
+<li>T1D Care Kit</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Lead Source</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Is the care kit for you
+or someone else?</td>
+<td>Picklist</td>
+<td>Salutation</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Title</td>
+<td>Picklist</td>
+<td>Title</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>First Name</td>
+<td>Text</td>
+<td>Name - First Name</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Last Name</td>
+<td>Text</td>
+<td>Name - Last Name</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Email</td>
+<td>Text</td>
+<td>Email</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>What is your connection
+to type 1 diabetes?</td>
+<td>Radio</td>
+<td>Online T1D Connection</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Street Address</td>
+<td>Text</td>
+<td>Address - Street</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Address Line 2</td>
+<td>Text</td>
+<td>Address - Street</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>City</td>
+<td>Text</td>
+<td>Address - City</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>State</td>
+<td>Text</td>
+<td>Address - State/Province</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Zip Code</td>
+<td>Text</td>
+<td>Address - Zip/Postal Code</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="lead-object">
+<h2>Lead Object<a class="headerlink" href="#lead-object" title="Permalink to this headline">¶</a></h2>
+<p>Lead Owner
+Lead Status
+Lead Record Type
+Name - Salutation
+Name - First Name
+Name - Last Name
+Company
+Online T1D Connection
+Street
+City
+State/Province
+Zip/Postal Code
+Country
+Other Phone
+Email
+JDRF Location Name
+Region
+Chapter
+Branch
+Endocrinologist
+Birthdate
+Diagnosis Date
+Outreach Volunteer Opt Out
+Preferred Gender of OV
+Created By
+Last Modified By</p>
+</div>
+<div class="section" id="t1d-care-kit-layout-in-the-leads-object">
+<h2>T1D Care Kit Layout in the Leads Object<a class="headerlink" href="#t1d-care-kit-layout-in-the-leads-object" title="Permalink to this headline">¶</a></h2>
+<p>The T1D Care Kit Layout is assigned to the T1D Care Kit lead record type and assigned to all user profiles.</p>
+<p>(Layout will go here)</p>
+</div>
+<div class="section" id="map-fields-from-leads-object-to-outreach-request-object">
+<h2>Map fields from Leads object to Outreach Request object<a class="headerlink" href="#map-fields-from-leads-object-to-outreach-request-object" title="Permalink to this headline">¶</a></h2>
+<p>Requested By
+Requested Date
+Existing Walk Supporter
+Request Status
+Record Type
+Contact
+Diagnosis Date (Date of Diagnosis)
+Endocrinologist
+Outreach Volunteer Opt Out
+Preferred Gender of OV
+T1D Connection
+Online T1D Connection
+Map Fields from Leads Object to Contact Object
+Lead Source
+Name - Salutation
+Name - First Name
+Name - Last Name
+Online T1D Connection (Luminate Online T1D Connection)
+Has Diabetes
+Diagnosis Date
+Street
+City
+State/Province
+Zip/Postal Code
+Country
+Other Phone
+Email</p>
+</div>
+<div class="section" id="t1d-care-kit-layout-in-the-outreach-request-object">
+<h2>T1D Care Kit Layout in the Outreach Request Object<a class="headerlink" href="#t1d-care-kit-layout-in-the-outreach-request-object" title="Permalink to this headline">¶</a></h2>
+<p>The T1D Care Kit Layout is assigned to the T1D Care Kit Outreach Request record type and assigned to all user profiles.</p>
+<p>(Layout will go here)</p>
+</div>
+<div class="section" id="email-content">
+<h2>Email Content<a class="headerlink" href="#email-content" title="Permalink to this headline">¶</a></h2>
+<p>GS - needs to be added.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="odst.html" class="btn btn-neutral" title="ODST" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Nathan McCusker.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

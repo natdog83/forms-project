@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ODST &mdash; JDRF Forms Project 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="JDRF Forms Project 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Care Kit" href="carekit.html"/>
+        <link rel="prev" title="Bag of Hope" href="boh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> JDRF Forms Project
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="boh.html">Bag of Hope</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ODST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#form-fields">Form Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emails">Emails</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#confirmation-email-to-constituents">Confirmation email to constituents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-created">Case Created</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="carekit.html">Care Kit</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">JDRF Forms Project</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>ODST</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/odst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="odst">
+<h1>ODST<a class="headerlink" href="#odst" title="Permalink to this headline">¶</a></h1>
+<p>The ODST form was creatd in Gravity Forms and sends the data to the Salesforce Case Object.</p>
+<div class="section" id="form-fields">
+<h2>Form Fields<a class="headerlink" href="#form-fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="25%" />
+<col width="22%" />
+<col width="9%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Type/Options</th>
+<th class="head">Destination</th>
+<th class="head">Required</th>
+<th class="head">Validation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td><dl class="first last docutils">
+<dt>Hidden Field</dt>
+<dd><ul class="first last simple">
+<li>ODST</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>&nbsp;</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Your question about type 1
+diabetes</td>
+<td>Picklist</td>
+<td>&nbsp;</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="triggers">
+<h2>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="emails">
+<h2>Emails<a class="headerlink" href="#emails" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="confirmation-email-to-constituents">
+<h3>Confirmation email to constituents<a class="headerlink" href="#confirmation-email-to-constituents" title="Permalink to this headline">¶</a></h3>
+<p>Dear {!Case.FirstName__c} ,</p>
+<p>Thank you for contacting the JDRF Online Diabetes Support Team. This is an automated reply to let you know we&#8217;ve received your request.</p>
+<p>We warmly welcome you to the JDRF family and look forward to offering you the support you have asked for. Within 48 hours, a member of our team will make personal contact with you by e-mail. There&#8217;s no need for you to reply to this message.</p>
+<p>In the meantime, if you have an urgent medical question, we strongly suggest you contact your doctor.</p>
+<p>Thank you,</p>
+<p>JDRF.org</p>
+</div>
+<div class="section" id="case-created">
+<h3>Case Created<a class="headerlink" href="#case-created" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="carekit.html" class="btn btn-neutral float-right" title="Care Kit" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="boh.html" class="btn btn-neutral" title="Bag of Hope" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Nathan McCusker.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
