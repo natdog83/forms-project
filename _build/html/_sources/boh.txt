@@ -2,10 +2,19 @@
 Bag of Hope
 ***********
 
-The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.  After the workflow and email is sent to the chapter with details. 
+The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.  After the workflow and email is sent to the chapter with details.
 
-The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
-The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
+ * The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
+ * The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
+
+ Triggers
+ ########
+
+ Trigger run when a lead is created with BOH as the lead type and does the following (details below):
+  * Creates a contact for the parent contact record
+  * Creates a contact for the child contact record and adds the contact to the parent household
+  * Creates an Outreach request and links both the parent and child contact record to the outreach request
+  * Automatically create new Additional Interest record upon Contact record creation
 
 Form Fields
 ######
@@ -69,15 +78,6 @@ Form Fields
 +---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
 | School                          | Text                          | School                    | No        |                    |
 +---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
-
-Triggers
-########
-
-Trigger run when a lead is created with BOH as the lead type and does the following (details below):
- * Creates a contact for the parent contact record
- * Creates a contact for the child contact record and adds the contact to the parent household
- * Creates an Outreach request and links both the parent and child contact record to the outreach request
- * Automatically create new Additional Interest record upon Contact record creation
 
 Parent Contact Record
 *********************
@@ -158,7 +158,7 @@ The child contact record is created and linked as a member of the parent househo
 Additional Interest Record
 **************************
 
-An additional interest record is created and added to the parents contact record. 
+An additional interest record is created and added to the parents contact record.
 
 +---------------------------+---------------------------+-----------------------------+
 | Lead Object               | Contact Object            | Auto fill                   |
@@ -169,4 +169,4 @@ An additional interest record is created and added to the parents contact record
 Email Content
 #############
 
-GS - needs to be added. 
+GS - needs to be added.

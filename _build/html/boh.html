@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="JDRF Forms Project 1.0 documentation" href="index.html"/>
-        <link rel="next" title="ODST" href="odst.html"/>
+        <link rel="next" title="Care Kit" href="carekit.html"/>
         <link rel="prev" title="Welcome to JDRF Forms Project’s documentation!" href="index.html"/> 
 
   
@@ -83,8 +83,7 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Bag of Hope</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#form-fields">Form Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#form-fields">Form Fields</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parent-contact-record">Parent Contact Record</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#child-contact-record">Child Contact Record</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#additional-interest-record">Additional Interest Record</a></li>
@@ -93,8 +92,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#email-content">Email Content</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="odst.html">ODST</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carekit.html">Care Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odst.html">ODST</a></li>
 </ul>
 
             
@@ -142,8 +141,22 @@
   <div class="section" id="bag-of-hope">
 <h1>Bag of Hope<a class="headerlink" href="#bag-of-hope" title="Permalink to this headline">¶</a></h1>
 <p>The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.  After the workflow and email is sent to the chapter with details.</p>
-<p>The link to the production environment is: <a class="reference external" href="http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/">http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/</a>
-The link to the staging environment is: <a class="reference external" href="http://type1nation.staging.wpengine.com/request-bag-hope/">http://type1nation.staging.wpengine.com/request-bag-hope/</a></p>
+<blockquote>
+<div><ul class="simple">
+<li>The link to the production environment is: <a class="reference external" href="http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/">http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/</a></li>
+<li>The link to the staging environment is: <a class="reference external" href="http://type1nation.staging.wpengine.com/request-bag-hope/">http://type1nation.staging.wpengine.com/request-bag-hope/</a></li>
+</ul>
+<dl class="docutils">
+<dt>Trigger run when a lead is created with BOH as the lead type and does the following (details below):</dt>
+<dd><ul class="first last simple">
+<li>Creates a contact for the parent contact record</li>
+<li>Creates a contact for the child contact record and adds the contact to the parent household</li>
+<li>Creates an Outreach request and links both the parent and child contact record to the outreach request</li>
+<li>Automatically create new Additional Interest record upon Contact record creation</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
 <div class="section" id="form-fields">
 <h2>Form Fields<a class="headerlink" href="#form-fields" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -345,19 +358,6 @@ with a JDRF Outreach Volunteer?</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="triggers">
-<h2>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>Trigger run when a lead is created with BOH as the lead type and does the following (details below):</dt>
-<dd><ul class="first last simple">
-<li>Creates a contact for the parent contact record</li>
-<li>Creates a contact for the child contact record and adds the contact to the parent household</li>
-<li>Creates an Outreach request and links both the parent and child contact record to the outreach request</li>
-<li>Automatically create new Additional Interest record upon Contact record creation</li>
-</ul>
-</dd>
-</dl>
 <div class="section" id="parent-contact-record">
 <h3>Parent Contact Record<a class="headerlink" href="#parent-contact-record" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -549,7 +549,7 @@ with a JDRF Outreach Volunteer?</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="odst.html" class="btn btn-neutral float-right" title="ODST" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="carekit.html" class="btn btn-neutral float-right" title="Care Kit" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to JDRF Forms Project’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
