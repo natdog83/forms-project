@@ -7,6 +7,9 @@ The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When th
  * The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
  * The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
 
+ Confirmation Message on website
+ ###############################
+
  Triggers
  ########
 
