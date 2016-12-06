@@ -31,7 +31,8 @@
 
   
     <link rel="top" title="JDRF Forms Project 1.0 documentation" href="index.html"/>
-        <link rel="prev" title="ODST" href="odst.html"/> 
+        <link rel="next" title="ODST" href="odst.html"/>
+        <link rel="prev" title="Bag of Hope" href="boh.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,10 +83,11 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="boh.html">Bag of Hope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="odst.html">ODST</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Care Kit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#t1d-care-kit-form-fields">T1D Care Kit Form Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-submit-confirmation-message">Form Submit Confirmation Message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-fields-mapping-to-lead-object">Form Fields Mapping to Lead Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lead-object">Lead Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#t1d-care-kit-layout-in-the-leads-object">T1D Care Kit Layout in the Leads Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#map-fields-from-leads-object-to-outreach-request-object">Map fields from Leads object to Outreach Request object</a></li>
@@ -93,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#email-content">Email Content</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="odst.html">ODST</a></li>
 </ul>
 
             
@@ -149,6 +152,164 @@ with details to follow up.</p>
 <li>The link to the staging environment is: <a class="reference external" href="http://type1nation.staging.wpengine.com/request-care-kit/">http://type1nation.staging.wpengine.com/request-care-kit/</a></li>
 </ul>
 </div></blockquote>
+<div class="section" id="t1d-care-kit-form-fields">
+<h2>T1D Care Kit Form Fields<a class="headerlink" href="#t1d-care-kit-form-fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="26%" />
+<col width="9%" />
+<col width="17%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Type/Options</th>
+<th class="head">Required</th>
+<th class="head">Validation</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Title</td>
+<td>Picklist</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>First Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Last Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Email</td>
+<td>email</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Phone</td>
+<td>Phone</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Date of Diagnosis</td>
+<td>Date</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>What is your connection
+to type 1 diabetes?</td>
+<td><dl class="first last docutils">
+<dt>Radio</dt>
+<dd><ul class="first last simple">
+<li>I have T1D</li>
+<li>My child</li>
+<li>My grandchild</li>
+<li>My sibling</li>
+<li>My spouse/partner</li>
+<li>My parent</li>
+<li>Another family member</li>
+<li>Friend or co-worker</li>
+<li>I prefer not to answer</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Do you want a printed copy
+mailed to you?</td>
+<td><dl class="first last docutils">
+<dt>Radio</dt>
+<dd><ul class="first last simple">
+<li>Yes, please</li>
+<li>No, thank you</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Street Address</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Address Line 2</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>City</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>State</td>
+<td>Picklist</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>ZIP Code</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Country</td>
+<td>Picklist</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>School</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Grade(s)</td>
+<td><dl class="first last docutils">
+<dt>Check box</dt>
+<dd><ul class="first last simple">
+<li>Preschool / Kindergarten</li>
+<li>Elementary</li>
+<li>Middle / Junior High</li>
+<li>High School</li>
+<li>Other</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="form-submit-confirmation-message">
+<h2>Form Submit Confirmation Message<a class="headerlink" href="#form-submit-confirmation-message" title="Permalink to this headline">¶</a></h2>
+<p>Thanks for contacting us! We will get in touch with you shortly.</p>
+</div>
 <div class="section" id="triggers">
 <h2>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
@@ -161,8 +322,8 @@ with details to follow up.</p>
 </dd>
 </dl>
 </div>
-<div class="section" id="t1d-care-kit-form-fields">
-<h2>T1D Care Kit Form Fields<a class="headerlink" href="#t1d-care-kit-form-fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="form-fields-mapping-to-lead-object">
+<h2>Form Fields Mapping to Lead Object<a class="headerlink" href="#form-fields-mapping-to-lead-object" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="27%" />
@@ -365,8 +526,10 @@ Email</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="odst.html" class="btn btn-neutral float-right" title="ODST" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="odst.html" class="btn btn-neutral" title="ODST" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="boh.html" class="btn btn-neutral" title="Bag of Hope" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
