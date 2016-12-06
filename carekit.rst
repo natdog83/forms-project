@@ -11,6 +11,14 @@ with details to follow up.
 
  * The link to the staging environment is: http://type1nation.staging.wpengine.com/request-care-kit/
 
+T1D Care Kit Form Fields
+########################
+
+Form Submit Confirmation Message
+################################
+
+Thanks for contacting us! We will get in touch with you shortly.
+
 Triggers
 ########
 
@@ -19,8 +27,8 @@ Trigger run when a lead is created with T1D Care Kit lead source and does the fo
  * Delete Lead record upon conversion to Contact record
  * Update Outreach Request record from Lead record lookup to Contact record lookup upon conversion to Contact record
 
-T1D Care Kit Form Fields
-########################
+Form Fields Mapping to Lead Object
+##################################
 
 +---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
 | Field                           | Type/Options                  | Destination               | Required  | Validation         |

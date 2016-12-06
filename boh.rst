@@ -7,6 +7,9 @@ The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When th
  * The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
  * The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
 
+ Form Fields
+ ######
+
  Confirmation Message on website
  ###############################
 
@@ -19,8 +22,8 @@ The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When th
   * Creates an Outreach request and links both the parent and child contact record to the outreach request
   * Automatically create new Additional Interest record upon Contact record creation
 
-Form Fields
-######
+Mapping from Form to Lead Object Fields
+#######################################
 
 +---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
 | Field                           | Type/Options                  | Destination               | Required  | Validation         |
