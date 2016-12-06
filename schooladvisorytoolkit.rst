@@ -1,6 +1,6 @@
-***********
-Care Kit
-***********
+***********************
+School Advisory Toolkit
+***********************
 
 The School Advisory Toolkit form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates
 a lead in Salesforce and through a workflow the lead is convereted into a contact and an outreach reaquest and the
