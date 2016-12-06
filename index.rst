@@ -13,6 +13,8 @@ Contents:
 
    boh
    carekit
+   schooladvisorytoolkit
+
    odst
 
 
