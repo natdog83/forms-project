@@ -89,8 +89,8 @@ Trigger run when a lead is created with BOH as the lead type and does the follow
  * Automatically create new Additional Interest record upon Contact record creation
 
 
-Mapping from Form to Lead Object Fields
-#######################################
+Mapping from Form to other Object Fields
+########################################
 
 +---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
 | Field                           | Type/Options                  | Destination               | Required  | Validation         |
@@ -239,8 +239,8 @@ An additional interest record is created and added to the parents contact record
 |                           |                           |                             |
 +---------------------------+---------------------------+-----------------------------+
 
-Outreach Request Object Mapping
-###############################
+Outreach Request Object
+************************
 
 +---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
 | Outreach Request Field          | Type/Options                  | Wordpress Form Field      | Required  | Validation/Notes   |
