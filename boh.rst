@@ -2,25 +2,92 @@
 Bag of Hope
 ***********
 
-The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.  After the workflow and email is sent to the chapter with details.
+The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead
+and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for
+the childs school.  After the workflow and email is sent to the chapter with details.
 
  * The link to the production environment is: http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/
  * The link to the staging environment is: http://type1nation.staging.wpengine.com/request-bag-hope/
 
- Form Fields
- ######
+Form Fields
+###########
 
- Confirmation Message on website
- ###############################
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Field                           | Type/Options                  | Required  | Validation         | Notes                  |
++=================================+===============================+===========+====================+========================+
+| Please confirm this request     | Javascript to display the     | Yes       | You have to select |                        |
+| is for a newly diagnosed        | of the form.                  |           | all three values   |                        |
+| child...	( Required )          |  * 16 years or younger        |           | to continue        |                        |
+|                                 |  * Diagnosed less than one    |           |                    |                        |
+|                                 |    year ago                   |           |                    |                        |
+|                                 |  * United States resident     |           |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Title                           | Picklist                      | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| First Name                      | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Last Name                       | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Email                           | Email                         | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Phone                           | Phone                         | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Street Address                  | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Address Line 2                  | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| City                            | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| State                           | Picklist                      | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| ZIP Code                        | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Child's Title                   | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Child's First Name              | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Child's Last Name               | Text                          | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Child's Suffix                  | Text                          | No        |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Date of Birth                   | Datefield                     | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Date of Diagnosis               | Datefield                     | Yes       |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Gender                          | Checkbox                      | No        |                    |                        |
+|                                 |  * Female                     |           |                    |                        |
+|                                 |  * Male                       |           |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Hospital Where Diagnosed        | Text                          | No        |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Endocrinologist                 | Text                          | No        |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Do you want to be connected     | Javascript to be contacted    | Yes       |                    |                        |
+| with a JDRF Outreach Volunteer? | and for the remaining fields  |           |                    |                        |
+|                                 |  * Yes, I'm interested in     |           |                    |                        |
+|                                 |    learning more              |           |                    |                        |
+|                                 |  * No, I'm not ready for      |           |                    |                        |
+|                                 |    personal contact yet.      |           |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| Child's Hobbies/Interests       | Text                          | No        |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
+| School                          | Text                          | No        |                    |                        |
++---------------------------------+-------------------------------+-----------+--------------------+------------------------+
 
- Triggers
- ########
+Confirmation Message on website
+###############################
 
- Trigger run when a lead is created with BOH as the lead type and does the following (details below):
-  * Creates a contact for the parent contact record
-  * Creates a contact for the child contact record and adds the contact to the parent household
-  * Creates an Outreach request and links both the parent and child contact record to the outreach request
-  * Automatically create new Additional Interest record upon Contact record creation
+Thanks for contacting us! We will get in touch with you shortly.
+
+Triggers
+########
+
+Trigger run when a lead is created with BOH as the lead type and does the following (details below):
+ * Creates a contact for the parent contac
+ * Creates a contact for the child contact record and adds the contact to the parent household
+ * Creates an Outreach request and links both the parent and child contact record to the outreach
+ * Automatically create new Additional Interest record upon Contact record creation
+
 
 Mapping from Form to Lead Object Fields
 #######################################
@@ -172,7 +239,52 @@ An additional interest record is created and added to the parents contact record
 |                           |                           |                             |
 +---------------------------+---------------------------+-----------------------------+
 
+Outreach Request Object Mapping
+###############################
+
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Outreach Request Field          | Type/Options                  | Wordpress Form Field      | Required  | Validation/Notes   |
++=================================+===============================+===========================+===========+====================+
+| Requested By                    | Automatically set to          | N/A                       | Yes       |                    |
+|                                 | Wordpress Integration User    |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Requested Date                  | Automatically set to todays   | N/A                       |           |                    |
+|                                 | date.                         |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Existing Walk Supporter         | Automatically populate with   | N/A                       |           |                    |
+|                                 | appropriate value as informed |                           |           |                    |
+|                                 | by automated process          |                           |           |                    |
+|                                 | established for determining   |                           |           |                    |
+|                                 | True vs. False                |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Request Status                  | New upon Outreach Request     | N/A                       |           |                    |
+|                                 | record creation from BOH web  |                           |           |                    |
+|                                 | form                          |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Record Type                     | Bag of Hope upon creation of  | N/A                       |           |                    |
+|                                 | Outreach Request record from  |                           |           |                    |
+|                                 | BOH web form                  |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Contact                         | Linked to parent contact      | N/A                       |           |                    |
+|                                 | record                        |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Child Contact                   | Linked to child contact       | N/A                       |           |                    |
+|                                 | record                        |                           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Birthdate                       |                               | Date of Birth             |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Diagnosis Date                  |                               | Date of Diagnosis         |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Hospital Where Diagnosed        |                               | Hospital                  |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Endocrinologist                 |                               | Endocrinologist           |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Preferred Gender of OV          |                               | N/A                       |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+| Outreach Volunteer Opt Out      |                               | N/A                       |           |                    |
++---------------------------------+-------------------------------+---------------------------+-----------+--------------------+
+
 Email Content
 #############
 
-GS - needs to be added.
+Need to confirm there are emails for BOH
