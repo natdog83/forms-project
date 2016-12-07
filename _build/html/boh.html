@@ -83,12 +83,16 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Bag of Hope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#form-fields">Form Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#confirmation-message-on-website">Confirmation Message on website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mapping-from-form-to-lead-object-fields">Mapping from Form to Lead Object Fields</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parent-contact-record">Parent Contact Record</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#child-contact-record">Child Contact Record</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#additional-interest-record">Additional Interest Record</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#outreach-request-object-mapping">Outreach Request Object Mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#email-content">Email Content</a></li>
 </ul>
 </li>
@@ -141,23 +145,226 @@
             
   <div class="section" id="bag-of-hope">
 <h1>Bag of Hope<a class="headerlink" href="#bag-of-hope" title="Permalink to this headline">¶</a></h1>
-<p>The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for the childs school.  After the workflow and email is sent to the chapter with details.</p>
+<p>The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead
+and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for
+the childs school.  After the workflow and email is sent to the chapter with details.</p>
 <blockquote>
 <div><ul class="simple">
 <li>The link to the production environment is: <a class="reference external" href="http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/">http://typeonenation.org/resources/newly-diagnosed/bag-of-hope/</a></li>
 <li>The link to the staging environment is: <a class="reference external" href="http://type1nation.staging.wpengine.com/request-bag-hope/">http://type1nation.staging.wpengine.com/request-bag-hope/</a></li>
 </ul>
+</div></blockquote>
+<div class="section" id="form-fields">
+<h2>Form Fields<a class="headerlink" href="#form-fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="26%" />
+<col width="9%" />
+<col width="17%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Type/Options</th>
+<th class="head">Required</th>
+<th class="head">Validation</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Please confirm this request
+is for a newly diagnosed
+child</td>
+<td><p class="first">Javascript to display the
+of the form.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>16 years or younger</li>
+<li>Diagnosed less than one
+year ago</li>
+<li>United States resident</li>
+</ul>
+</div></blockquote>
+</td>
+<td>Yes</td>
+<td>You have to
+select all three
+values to
+continue</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Title</td>
+<td>Picklist</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>First Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Last Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Email</td>
+<td>Email</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Phone</td>
+<td>Phone</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Street Address</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Address Line 2</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>City</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>State</td>
+<td>Picklist</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>ZIP Code</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Child&#8217;s Title</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Child&#8217;s First Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Child&#8217;s Last Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Child&#8217;s Suffix</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Date of Birth</td>
+<td>Datefield</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Date of Diagnosis</td>
+<td>Datefield</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Gender</td>
+<td><dl class="first last docutils">
+<dt>Checkbox</dt>
+<dd><ul class="first last simple">
+<li>Female</li>
+<li>Male</li>
+</ul>
+</dd>
+</dl>
+</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Hospital Where Diagnosed</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Endocrinologist</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Do you want to be connected
+with a JDRF Outreach Volunteer</td>
+<td><p class="first">Javascript to be contacted
+and for the remaining fields</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Yes, I&#8217;m interested in
+learning more</li>
+<li>No, I&#8217;m not ready for
+personal contact yet.</li>
+</ul>
+</div></blockquote>
+</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Child&#8217;s Hobbies/Interests</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>School</td>
+<td>Text</td>
+<td>No</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="confirmation-message-on-website">
+<h2>Confirmation Message on website<a class="headerlink" href="#confirmation-message-on-website" title="Permalink to this headline">¶</a></h2>
+<p>Thanks for contacting us! We will get in touch with you shortly.</p>
+</div>
+<div class="section" id="triggers">
+<h2>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>Trigger run when a lead is created with BOH as the lead type and does the following (details below):</dt>
 <dd><ul class="first last simple">
-<li>Creates a contact for the parent contact record</li>
+<li>Creates a contact for the parent contac</li>
 <li>Creates a contact for the child contact record and adds the contact to the parent household</li>
-<li>Creates an Outreach request and links both the parent and child contact record to the outreach request</li>
+<li>Creates an Outreach request and links both the parent and child contact record to the outreach</li>
 <li>Automatically create new Additional Interest record upon Contact record creation</li>
 </ul>
 </dd>
 </dl>
-</div></blockquote>
+</div>
 <div class="section" id="mapping-from-form-to-lead-object-fields">
 <h2>Mapping from Form to Lead Object Fields<a class="headerlink" href="#mapping-from-form-to-lead-object-fields" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -537,9 +744,121 @@ with a JDRF Outreach Volunteer?</td>
 </table>
 </div>
 </div>
+<div class="section" id="outreach-request-object-mapping">
+<h2>Outreach Request Object Mapping<a class="headerlink" href="#outreach-request-object-mapping" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="25%" />
+<col width="22%" />
+<col width="9%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Outreach Request Field</th>
+<th class="head">Type/Options</th>
+<th class="head">Wordpress Form Field</th>
+<th class="head">Required</th>
+<th class="head">Validation/Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Requested By</td>
+<td>Automatically set to
+Wordpress Integration User</td>
+<td>N/A</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Requested Date</td>
+<td>Automatically set to todays
+date.</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Existing Walk Supporter</td>
+<td>Automatically populate with
+appropriate value as informed
+by automated process
+established for determining
+True vs. False</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Request Status</td>
+<td>New upon Outreach Request
+record creation from BOH web
+form</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Record Type</td>
+<td>Bag of Hope upon creation of
+Outreach Request record from
+BOH web form</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Contact</td>
+<td>Linked to parent contact
+record</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Child Contact</td>
+<td>Linked to child contact
+record</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Birthdate</td>
+<td>&nbsp;</td>
+<td>Date of Birth</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Diagnosis Date</td>
+<td>&nbsp;</td>
+<td>Date of Diagnosis</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Hospital Where Diagnosed</td>
+<td>&nbsp;</td>
+<td>Hospital</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Endocrinologist</td>
+<td>&nbsp;</td>
+<td>Endocrinologist</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Preferred Gender of OV</td>
+<td>&nbsp;</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Outreach Volunteer Opt Out</td>
+<td>&nbsp;</td>
+<td>N/A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="email-content">
 <h2>Email Content<a class="headerlink" href="#email-content" title="Permalink to this headline">¶</a></h2>
-<p>GS - needs to be added.</p>
+<p>Need to confirm there are emails for BOH</p>
 </div>
 </div>
 

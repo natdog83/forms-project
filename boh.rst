@@ -15,10 +15,10 @@ Form Fields
 +---------------------------------+-------------------------------+-----------+--------------------+------------------------+
 | Field                           | Type/Options                  | Required  | Validation         | Notes                  |
 +=================================+===============================+===========+====================+========================+
-| Please confirm this request     | Javascript to display the     | Yes       | You have to select |                        |
-| is for a newly diagnosed        | of the form.                  |           | all three values   |                        |
-| child...	( Required )          |  * 16 years or younger        |           | to continue        |                        |
-|                                 |  * Diagnosed less than one    |           |                    |                        |
+| Please confirm this request     | Javascript to display the     | Yes       | You have to        |                        |
+| is for a newly diagnosed        | of the form.                  |           | select all three   |                        |
+| child                           |  * 16 years or younger        |           | values to          |                        |
+|                                 |  * Diagnosed less than one    |           | continue           |                        |
 |                                 |    year ago                   |           |                    |                        |
 |                                 |  * United States resident     |           |                    |                        |
 +---------------------------------+-------------------------------+-----------+--------------------+------------------------+
@@ -63,7 +63,7 @@ Form Fields
 | Endocrinologist                 | Text                          | No        |                    |                        |
 +---------------------------------+-------------------------------+-----------+--------------------+------------------------+
 | Do you want to be connected     | Javascript to be contacted    | Yes       |                    |                        |
-| with a JDRF Outreach Volunteer? | and for the remaining fields  |           |                    |                        |
+| with a JDRF Outreach Volunteer  | and for the remaining fields  |           |                    |                        |
 |                                 |  * Yes, I'm interested in     |           |                    |                        |
 |                                 |    learning more              |           |                    |                        |
 |                                 |  * No, I'm not ready for      |           |                    |                        |
