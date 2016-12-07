@@ -14,6 +14,7 @@ Contents:
    boh
    carekit
    schooladvisorytoolkit
+   adulttoolkit
 
    odst
 
