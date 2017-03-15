@@ -2,6 +2,8 @@
 Bag of Hope
 ***********
 
+This includes the updates made today.
+
 The Bag of Hope form on jdrf.org goes to the lead object in Salesforce.  When the form is submitted it creates a lead
 and through a workflow the lead is convereted into two contacts, an outreach reaquest and an additional interest for
 the childs school.  After the workflow and email is sent to the chapter with details.
